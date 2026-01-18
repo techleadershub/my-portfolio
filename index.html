@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sridhar Jammalamadaka — AI Systems Architect</title>
+  <meta name="description" content="AI Systems Architect | Agentic AI & RAG Systems | Architecture Consulting | AI Coaching for Developers & Architects" />
+  <meta name="theme-color" content="#0b1220" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sridhar Jammalamadaka — AI Systems Architect" />
+  <meta property="og:description" content="Agentic AI & RAG Systems • Architecture Consulting • AI Coaching" />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root{
+      --bg:#070B14;
+      --panel:#0B1220;
+      --panel2:#0F1A2F;
+      --text:#EAF0FF;
+      --muted:#A8B3D6;
+      --muted2:#7F8BB3;
+      --brand:#7C5CFF;
+      --brand2:#32D5FF;
+      --ok:#2EE59D;
+      --warn:#FFD166;
+      --border:rgba(255,255,255,.10);
+      --shadow: 0 12px 40px rgba(0,0,0,.45);
+      --radius: 18px;
+      --radius2: 24px;
+      --max: 1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      background:
+        radial-gradient(900px 600px at 15% -10%, rgba(124,92,255,.22), transparent 60%),
+        radial-gradient(900px 600px at 100% 10%, rgba(50,213,255,.18), transparent 55%),
+        radial-gradient(900px 600px at 60% 120%, rgba(46,229,157,.10), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.55;
+      letter-spacing:.2px;
+    }
+    a{color:inherit; text-decoration:none}
+    a:hover{opacity:.92}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 80px}
+    .nav{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(14px);
+      background: rgba(7,11,20,.55);
+      border-bottom:1px solid var(--border);
+    }
+    .nav .inner{
+      max-width:var(--max); margin:0 auto;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:12px 18px;
+    }
+    .brand{
+      display:flex; gap:10px; align-items:center;
+      font-weight:700;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 0 0 6px rgba(124,92,255,.12);
+    }
+    .navlinks{display:flex; gap:14px; align-items:center; flex-wrap:wrap}
+    .navlinks a{
+      color:var(--muted);
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px solid transparent;
+    }
+    .navlinks a:hover{
+      border-color:var(--border);
+      background: rgba(255,255,255,.04);
+      color:var(--text);
+    }
+    .cta{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 14px;
+      border-radius:14px;
+      border:1px solid rgba(124,92,255,.35);
+      background: linear-gradient(135deg, rgba(124,92,255,.18), rgba(50,213,255,.10));
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      font-weight:650;
+    }
+
+    .hero{padding:48px 0 14px}
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+    }
+    @media (max-width: 920px){
+      .grid{grid-template-columns:1fr}
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--border);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card .pad{padding:22px}
+    .kicker{
+      display:inline-flex; align-items:center; gap:8px;
+      color:var(--muted);
+      font-weight:600;
+      letter-spacing:.3px;
+      font-size:13px;
+      padding:8px 10px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background: rgba(255,255,255,.03);
+    }
+    .pill{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; border:1px solid var(--border); color:var(--muted); font-size:13px; background: rgba(255,255,255,.03)}
+    h1{
+      margin:14px 0 10px;
+      font-size:44px;
+      line-height:1.05;
+      letter-spacing:-.8px;
+    }
+    @media (max-width: 520px){ h1{font-size:36px} }
+    .lead{color:var(--muted); font-size:16px; margin:0 0 16px}
+    .actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:16px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      font-weight:650;
+    }
+    .btn:hover{background: rgba(255,255,255,.06)}
+    .btn.primary{
+      border-color: rgba(124,92,255,.5);
+      background: linear-gradient(135deg, rgba(124,92,255,.26), rgba(50,213,255,.10));
+    }
+    .mini{
+      color:var(--muted2);
+      font-size:13px;
+      margin-top:10px;
+    }
+    .hl{
+      background: linear-gradient(135deg, rgba(124,92,255,.35), rgba(50,213,255,.25));
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: 16px;
+      padding:16px;
+    }
+    .hl strong{color:var(--text)}
+    .list{margin:10px 0 0; padding-left:18px; color:var(--muted)}
+    .list li{margin:6px 0}
+
+    .section{padding:18px 0}
+    .section h2{
+      margin:0 0 12px;
+      font-size:20px;
+      letter-spacing:-.2px;
+    }
+    .muted{color:var(--muted)}
+    .cols{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    @media (max-width: 920px){ .cols{grid-template-columns:1fr} }
+    .tile{
+      background: rgba(255,255,255,.03);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      padding:16px;
+    }
+    .tile h3{margin:0 0 8px; font-size:16px}
+    .tile p{margin:0; color:var(--muted); font-size:14px}
+
+    .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
+    .tag{
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.02);
+      color:var(--muted);
+      font-size:13px;
+      white-space:nowrap;
+    }
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    @media (max-width: 920px){ .split{grid-template-columns:1fr} }
+
+    .footer{
+      margin-top:22px;
+      padding-top:18px;
+      border-top:1px solid var(--border);
+      color:var(--muted2);
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      font-size:13px;
+    }
+
+    /* small util */
+    .row{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+    .sp{height:10px}
+    .icon{
+      width:18px; height:18px; display:inline-block;
+      border-radius:6px;
+      background: rgba(255,255,255,.05);
+      border:1px solid var(--border);
+    }
+    .copy{
+      cursor:pointer;
+    }
+    .toast{
+      position: fixed;
+      bottom: 18px; left: 50%;
+      transform: translateX(-50%);
+      background: rgba(11,18,32,.9);
+      border:1px solid var(--border);
+      color: var(--text);
+      padding:10px 12px;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      opacity:0;
+      pointer-events:none;
+      transition: opacity .18s ease, transform .18s ease;
+    }
+    .toast.show{
+      opacity:1;
+      transform: translateX(-50%) translateY(-6px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <div class="inner">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>Sridhar J.</span>
+      </div>
+      <div class="navlinks">
+        <a href="#services">Services</a>
+        <a href="#proof">Proof</a>
+        <a href="#work">Work</a>
+        <a href="#stack">Stack</a>
+        <a href="#contact" class="cta">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="grid">
+        <div class="card">
+          <div class="pad">
+            <div class="row">
+              <span class="kicker">AI Systems Architect • Agentic AI • RAG</span>
+              <span class="pill">Hyderabad / Bengaluru • India</span>
+            </div>
+
+            <h1>
+              I help teams ship<br/>
+              <span style="background:linear-gradient(135deg,var(--brand),var(--brand2)); -webkit-background-clip:text; background-clip:text; color:transparent;">
+                production-grade AI systems
+              </span>
+            </h1>
+
+            <p class="lead">
+              Architecture consulting + hands-on delivery for <b>Agentic AI</b>, <b>RAG</b>, and scalable AI workflows —
+              plus coaching to make your engineers <b>AI-ready</b>. :contentReference[oaicite:1]{index=1}
+            </p>
+
+            <div class="actions">
+              <a class="btn primary" href="#contact">Book a call</a>
+              <a class="btn" href="https://www.linkedin.com/in/sridharjammalamadaka" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a class="btn" href="https://www.futureproofindia.com" target="_blank" rel="noreferrer">FutureProof India</a>
+            </div>
+
+            <div class="mini">
+              Fastest way to reach me: <span class="copy" data-copy="sridhar.jammalamadaka@gmail.com" title="Click to copy">sridhar.jammalamadaka@gmail.com</span> •
+              <span class="copy" data-copy="+919916589428" title="Click to copy">+91 99165 89428</span> :contentReference[oaicite:2]{index=2}
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="pad">
+            <div class="hl">
+              <strong>What you get</strong>
+              <ul class="list">
+                <li>Clear AI architecture (PoC → pilot → production)</li>
+                <li>RAG that actually retrieves the right context</li>
+                <li>Agentic workflows with tools, guardrails, and observability</li>
+                <li>Team enablement: devs learn by building with me</li>
+              </ul>
+            </div>
+
+            <div class="sp"></div>
+
+            <div class="tile">
+              <h3>Current Focus</h3>
+              <p>AI consulting, capability building, and engineering transformation through hands-on systems + coaching. :contentReference[oaicite:3]{index=3}</p>
+            </div>
+
+            <div class="tags">
+              <span class="tag">Agentic AI</span>
+              <span class="tag">RAG</span>
+              <span class="tag">LangGraph</span>
+              <span class="tag">LlamaIndex</span>
+              <span class="tag">Architecture</span>
+              <span class="tag">Upskilling</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <h2>Services</h2>
+      <div class="cols">
+        <div class="tile">
+          <h3>AI Consulting & System Architecture</h3>
+          <p>Design RAG pipelines, agentic workflows, smart retrieval, and scalable AI apps from idea → production. :contentReference[oaicite:4]{index=4}</p>
+        </div>
+        <div class="tile">
+          <h3>AI Transformation for Companies</h3>
+          <p>A structured approach: awareness → hands-on capability → applied consulting/co-delivery. :contentReference[oaicite:5]{index=5}</p>
+        </div>
+        <div class="tile">
+          <h3>Developer Productivity with AI</h3>
+          <p>Practical coaching to improve coding speed, design quality, testing, debugging, docs, and automation. :contentReference[oaicite:6]{index=6}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROOF -->
+    <section id="proof" class="section">
+      <h2>Proof & credibility</h2>
+      <div class="split">
+        <div class="tile">
+          <h3>16+ years across architecture + product engineering</h3>
+          <p>Hands-on execution with deep mentoring and capability building. :contentReference[oaicite:7]{index=7}</p>
+          <div class="tags">
+            <span class="tag">System Architecture</span>
+            <span class="tag">Distributed Systems</span>
+            <span class="tag">NFRs</span>
+            <span class="tag">Performance</span>
+            <span class="tag">Security</span>
+          </div>
+        </div>
+        <div class="tile">
+          <h3>Tele-MANAS (EHRC) — platform & integrations architect</h3>
+          <p>Architecting reliable, secure, compliant systems for a nationwide 24/7 tele-mental-health network, including upcoming AI capabilities. :contentReference[oaicite:8]{index=8}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section id="work" class="section">
+      <h2>Selected experience</h2>
+      <div class="cols">
+        <div class="tile">
+          <h3>FutureProof India — Founder</h3>
+          <p>Building AI-native, agentic-system builders; teaching Agentic AI, advanced RAG, and portfolio sprints. :contentReference[oaicite:9]{index=9}</p>
+        </div>
+        <div class="tile">
+          <h3>Societe Generale — Lead Full Stack Engineer</h3>
+          <p>Monolith → microservices migration; Angular + Java/Spring + Oracle in enterprise environments. :contentReference[oaicite:10]{index=10}</p>
+        </div>
+        <div class="tile">
+          <h3>Oracle — SMTS</h3>
+          <p>SaaS cloud product on microservices architecture. :contentReference[oaicite:11]{index=11}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STACK -->
+    <section id="stack" class="section">
+      <h2>Tech stack</h2>
+      <div class="tile">
+        <p class="muted">Core tools I work with (and teach): :contentReference[oaicite:12]{index=12}</p>
+        <div class="tags">
+          <span class="tag">Java</span>
+          <span class="tag">Python</span>
+          <span class="tag">React</span>
+          <span class="tag">Angular</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">LangGraph</span>
+          <span class="tag">CrewAI</span>
+          <span class="tag">Autogen</span>
+          <span class="tag">LlamaIndex</span>
+          <span class="tag">AWS</span>
+          <span class="tag">n8n</span>
+          <span class="tag">SQL / NoSQL</span>
+          <span class="tag">Vector DBs</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="pad">
+            <h3 style="margin:0 0 8px">If you want to build AI capability or ship an AI system…</h3>
+            <p class="muted" style="margin:0 0 14px">
+              Email me what you’re building + your timeline. I’ll reply with the next best step (call / quick audit / pilot plan).
+            </p>
+
+            <div class="actions">
+              <a class="btn primary" href="mailto:sridhar.jammalamadaka@gmail.com?subject=Consulting%20Inquiry&body=Hi%20Sridhar%2C%0A%0AWe%20want%20help%20with%3A%20%0A-%20%0ATimeline%3A%20%0AContext%3A%20%0A%0AThanks%2C">Email me</a>
+              <a class="btn" href="https://www.linkedin.com/in/sridharjammalamadaka" target="_blank" rel="noreferrer">Message on LinkedIn</a>
+            </div>
+
+            <div class="mini">
+              Email: <span class="copy" data-copy="sridhar.jammalamadaka@gmail.com">sridhar.jammalamadaka@gmail.com</span><br/>
+              Phone: <span class="copy" data-copy="+919916589428">+91 99165 89428</span> :contentReference[oaicite:13]{index=13}
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="pad">
+            <div class="tile">
+              <h3>Quick pitch (copy/paste)</h3>
+              <p class="muted" style="margin:0">
+                I help companies build AI-capable teams and ship production-grade Agentic AI + RAG systems with clarity, guardrails, and scalability. :contentReference[oaicite:14]{index=14}
+              </p>
+              <div class="sp"></div>
+              <a class="btn" href="#" id="copyPitch">Copy pitch</a>
+            </div>
+
+            <div class="sp"></div>
+
+            <div class="tile">
+              <h3>Languages</h3>
+              <p class="muted" style="margin:0">English, Telugu, Kannada, Tamil, Hindi, Marathi, Sanskrit :contentReference[oaicite:15]{index=15}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div>© <span id="year"></span> Sridhar Jammalamadaka</div>
+        <div class="row">
+          <a class="pill" href="https://www.futureproofindia.com" target="_blank" rel="noreferrer">futureproofindia.com</a>
+          <a class="pill" href="https://www.linkedin.com/in/sridharjammalamadaka" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast">Copied</div>
+
+  <script>
+    const toast = document.getElementById('toast');
+    function showToast(msg){
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(()=>toast.classList.remove('show'), 1100);
+    }
+
+    // Copy handlers
+    document.querySelectorAll('[data-copy]').forEach(el=>{
+      el.addEventListener('click', async ()=>{
+        try{
+          await navigator.clipboard.writeText(el.getAttribute('data-copy'));
+          showToast('Copied to clipboard');
+        }catch(e){
+          showToast('Copy failed');
+        }
+      });
+    });
+
+    document.getElementById('copyPitch').addEventListener('click', async (e)=>{
+      e.preventDefault();
+      const text = "I help companies build AI-capable teams and ship production-grade Agentic AI + RAG systems with clarity, guardrails, and scalability.";
+      try{
+        await navigator.clipboard.writeText(text);
+        showToast('Pitch copied');
+      }catch(e){
+        showToast('Copy failed');
+      }
+    });
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
